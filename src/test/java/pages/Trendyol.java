@@ -51,5 +51,11 @@ public class Trendyol {
     @FindBy(xpath = "//div[@class='dscrptn dscrptn-V2']")
     public WebElement IphoneAramaSonucu;
 
+    @FindBy(xpath = "//div[@class='prdct-cntnr-wrppr']")
+    public WebElement IphoneAramaSonucuGrup;
+
+    @FindBy(xpath = "//div[contains(@title, 'iPhone 14')]")
+    public WebElement IphoneSecme;
+
 
 }
