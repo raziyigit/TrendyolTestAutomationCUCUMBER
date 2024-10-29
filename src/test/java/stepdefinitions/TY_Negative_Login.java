@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import pages.Trendyol;
 
-public class TY_Fail_Login {
+public class TY_Negative_Login {
 
     Trendyol trendyol =new Trendyol();
 
@@ -30,6 +30,16 @@ public class TY_Fail_Login {
             String actualErrorMessage = trendyol.HataMesajiKontrol.getText();
             Assert.isTrue(actualErrorMessage.equals(errorMessage), "Hata mesajı beklendiği gibi değil!");
             System.out.println("Fail Login Test başarılı: Beklenen hata mesajı alındı.");
+
+    }
+
+    @And("Login asamasinda cikan kategoriler pop-up kapat")
+    public void loginAsamasindaCikanKategorilerPopUpKapat() {
+        try {
+            trendyol.NegativeLoginPagePopUpKapat.click();
+        } catch (Exception e) {
+            System.out.println("Popup kapatma sırasında hata oluştu: " + e.getMessage());
+        }
 
     }
 }

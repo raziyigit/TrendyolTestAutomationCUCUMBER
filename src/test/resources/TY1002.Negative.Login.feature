@@ -8,6 +8,7 @@ Scenario Outline: Invalid Password case
   And Ana sayfada giris yap butonuna tiklanir
   And Mail adresi"<eposta>" yazilir
   And Sifre "<password>" yazilir
+  And Login asamasinda cikan kategoriler pop-up kapat
   And Giris yap butonuna tiklanir
   Then Hata mesajı aldığı kontrol edilir "<errorMessage>"
 

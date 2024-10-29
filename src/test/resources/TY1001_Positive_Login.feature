@@ -7,6 +7,7 @@ Feature:TY_LOGIN
     And Popup kapatilir
     And 3 saniye beklenir
     And Ana sayfada giris yap butonuna tiklanir
-    And Mail adresi yazilir
-    And Sifre yazilir
+    And "mail" yazilir
+    And "sifre" sifre yazilir
     And Giris yap butonuna tiklanir
+    And Trendyol ana sayfasında giris yaptigi kontrol edilir

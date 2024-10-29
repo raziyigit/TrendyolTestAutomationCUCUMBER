@@ -34,13 +34,11 @@ public class Trendyol {
     public WebElement HataMesajiKontrol;
 
     @FindBy(xpath = "//input[@data-testid='suggestion']")
-    public WebElement SearchComboBox;
+    public WebElement SearchTextBox;
 
     @FindBy(xpath = "//i[@data-testid='search-icon']")
     public WebElement SearchButton;
 
-    @FindBy(xpath = "//div[@class='srch-rslt-title']")
-    public WebElement AramaSonucu;
 
     @FindBy(xpath = "//div[@class='no-rslt-text no-rslt-title']")
     public WebElement HataliUrunAramaSonucu;
@@ -48,14 +46,24 @@ public class Trendyol {
     @FindBy(xpath = "//a[@id='logo']")
     public WebElement logo;
 
-    @FindBy(xpath = "//div[@class='dscrptn dscrptn-V2']")
+    @FindBy(xpath = "//div[@class='p-card-wrppr with-campaign-view'][1]")
     public WebElement IphoneAramaSonucu;
 
-    @FindBy(xpath = "//div[@class='prdct-cntnr-wrppr']")
-    public WebElement IphoneAramaSonucuGrup;
 
-    @FindBy(xpath = "//div[contains(@title, 'iPhone 14')]")
+    @FindBy(xpath = "//div[@class='p-card-wrppr with-campaign-view'][1]")
     public WebElement IphoneSecme;
+
+    @FindBy(xpath = "//div[@class='account-nav-item user-login-container']")
+    public WebElement LoginKontrol;
+
+    @FindBy(xpath = "//div[@class='srch-ttl-cntnr-wrppr']")
+    public WebElement MevcutUrun;
+
+    @FindBy(xpath = "//button[@class='onboarding-popover__default-renderer-primary-button']")
+    public WebElement UrunSayfasiPopUpButton;
+
+    @FindBy(xpath = "//span[@class='i-cancel']")
+    public WebElement NegativeLoginPagePopUpKapat;
 
 
 }

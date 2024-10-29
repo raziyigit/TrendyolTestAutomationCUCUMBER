@@ -5,7 +5,7 @@ Feature: TY.PRODUCT.SEARCH
     And 3 saniye beklenir
     And Popup kapatilir
     And 3 saniye beklenir
-    And Urun arama combobox tiklanir, ürün adı yazılır
+    And Urun arama combobox tiklanir, "urunAdi" yazilir
     And Urun arama butonuna tiklanir
     And Urun mevcut oldugu gorulur
 

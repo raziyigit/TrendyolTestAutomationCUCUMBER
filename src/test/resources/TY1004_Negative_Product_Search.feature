@@ -5,7 +5,7 @@ Feature: TY.FAIL.PRODUCT.SEARCH
     And 3 saniye beklenir
     And Popup kapatilir
     And 3 saniye beklenir
-    And Urun arama combobox tiklanir, hatali ürün adı yazılır
+    And Urun arama combobox tiklanir, "failProduct" adı yazılır
     And Urun arama butonuna tiklanir
     And Urun bulunmadigi kontrol edilir
 

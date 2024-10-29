@@ -5,7 +5,8 @@ Feature: TY PRODUCT DETAILS
     And 3 saniye beklenir
     And Popup kapatilir
     And 3 saniye beklenir
-    And Urun arama combobox tiklanir, ürün adı yazılır
+    And Urun arama combobox tiklanir, "urunAdi" yazılır
     And Urun arama butonuna tiklanir
-    And Urun mevcut oldugu gorulur
+    And Urunun mevcut oldugu gorulur
     And Aranan ilk ürün sectirilir
+    And Acilan sayfadaki pop-up kapatilir
