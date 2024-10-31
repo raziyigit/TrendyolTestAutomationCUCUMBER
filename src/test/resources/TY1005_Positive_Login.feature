@@ -1,7 +1,7 @@
-Feature:TY_LOGIN
+Feature: Trendyol Positive Login Test
 
-  @login
-  Scenario: Trendyol Login islemleri
+  @PositiveLogin
+  Scenario: Trendyol pozitif login islemleri
     Given "Url" sayfasi acilir
     And 3 saniye beklenir
     And Popup kapatilir
@@ -11,3 +11,4 @@ Feature:TY_LOGIN
     And "sifre" sifre yazilir
     And Giris yap butonuna tiklanir
     And Trendyol ana sayfasında giris yaptigi kontrol edilir
+    Then Sayfayi kapatir

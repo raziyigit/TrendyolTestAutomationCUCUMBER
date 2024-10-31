@@ -1,6 +1,7 @@
-Feature: Scenario outline
+Feature: Trendyol Negative Login Test
 
-Scenario Outline: Invalid Password case
+@NegativeLogin
+Scenario Outline: Trendyol Negatif login islemleri
   Given "Url" sayfasi acilir
   And 3 saniye beklenir
   And Popup kapatilir
@@ -11,6 +12,7 @@ Scenario Outline: Invalid Password case
   And Login asamasinda cikan kategoriler pop-up kapat
   And Giris yap butonuna tiklanir
   Then Hata mesajı aldığı kontrol edilir "<errorMessage>"
+  Then Sayfayi kapatir
 
   Examples:
     | eposta                      | password  | errorMessage                               |

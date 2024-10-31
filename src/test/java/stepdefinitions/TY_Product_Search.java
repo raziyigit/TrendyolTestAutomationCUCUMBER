@@ -33,12 +33,12 @@ public class TY_Product_Search {
 
     @And("Urun bulunmadigi kontrol edilir")
     public void urunBulunmadigiKontrolEdilir() {
-        Assert.assertTrue("Ürün bulunmadı mesajı görünmüyor!", trendyol.HataliUrunAramaSonucu.isDisplayed());
+        Assert.assertTrue("Ürün bulunmadı mesajı görünmüyor!", trendyol.NegativeProductSearchResult.isDisplayed());
     }
 
     @And("Urun mevcut oldugu gorulur")
     public void urunMevcutOlduguGorulur() {
-        Assert.assertTrue("Ürün bulundu mesajı görünmüyor!", trendyol.IphoneAramaSonucu.isDisplayed());
+        Assert.assertTrue("Ürün bulundu mesajı görünmüyor!", trendyol.IphoneSearchResult.isDisplayed());
     }
 
 
@@ -48,6 +48,7 @@ public class TY_Product_Search {
         trendyol.SearchTextBox.sendKeys(urunAdi);
 
     }
+
 
 
 }

@@ -29,7 +29,7 @@ public class TY_Positive_Login {
     @And("Popup kapatilir")
     public void popupKapatilir() {
         try {
-            trendyol.PopUpKabulEtButton.click();
+            trendyol.PopUpAcceptButton.click();
         } catch (Exception e) {
             System.out.println("Popup kapatma sırasında hata oluştu: " + e.getMessage());
         }
@@ -38,12 +38,12 @@ public class TY_Positive_Login {
     @And("Ana sayfada giris yap butonuna tiklanir")
     public void anaSayfadaGirisYapButonunaTiklanir() {
         Actions actions = new Actions(driver);
-        Assert.assertTrue("Öğe görünür değil", trendyol.AnaSayfaGirisYapButton.isDisplayed());
-        actions.moveToElement(trendyol.AnaSayfaGirisYapButton)
+        Assert.assertTrue("Öğe görünür değil", trendyol.HomePageLoginButton.isDisplayed());
+        actions.moveToElement(trendyol.HomePageLoginButton)
                 .pause(500)
                 .perform();
 
-        trendyol.AnaSayfaGirisYapButton.click();
+        trendyol.HomePageLoginButton.click();
     }
 
     @And("Mail adresi yazilir")
@@ -54,21 +54,21 @@ public class TY_Positive_Login {
 
     @And("Sifre yazilir")
     public void sifreYazilir() {
-        Assert.assertTrue("Öğe görünür değil", trendyol.SifreTextBox.isDisplayed());
-        trendyol.SifreTextBox.sendKeys("Aa123456..");
-        //şifreyi girebildimmi diye kontrol et
+        Assert.assertTrue("Öğe görünür değil", trendyol.PasswordTextBox.isDisplayed());
+        trendyol.PasswordTextBox.sendKeys("Aa123456..");
+        
     }
 
     @And("Giris yap butonuna tiklanir")
     public void girisYapButonunaTiklanir() {
-        Assert.assertTrue("Öğe görünür değil", trendyol.GirisYapButton.isDisplayed());
-        trendyol.GirisYapButton.click();
+        Assert.assertTrue("Öğe görünür değil", trendyol.LoginButton.isDisplayed());
+        trendyol.LoginButton.click();
     }
 
 
     @And("Trendyol ana sayfasında giris yaptigi kontrol edilir")
     public void trendyolAnaSayfasındaGirisYaptigiKontrolEdilir() {
-        Assert.assertTrue("Öğe görünür değil", trendyol.LoginKontrol.isDisplayed());
+        Assert.assertTrue("Öğe görünür değil", trendyol.LoginControl.isDisplayed());
     }
 
     @And("{string} yazilir")
@@ -81,6 +81,6 @@ public class TY_Positive_Login {
     @And("{string} sifre yazilir")
     public void sifreYazilir(String deger2) {
         String sifre = ConfigReader.getProperty(deger2);
-        trendyol.SifreTextBox.sendKeys(sifre);
+        trendyol.PasswordTextBox.sendKeys(sifre);
     }
 }

@@ -1,12 +1,12 @@
-Feature: TY.FAIL.PRODUCT.SEARCH
+Feature: Trendyol Negative Login Test
 
+  Background: Trendyol Sitesi Acilir
+    Given Trendyol ana sayfasi acilir
+@NegativeProductSearch
   Scenario: Ürün Arama Testi (Geçersiz Ürün)
-    Given "Url" sayfasi acilir
-    And 3 saniye beklenir
-    And Popup kapatilir
-    And 3 saniye beklenir
     And Urun arama combobox tiklanir, "failProduct" adı yazılır
     And Urun arama butonuna tiklanir
     And Urun bulunmadigi kontrol edilir
+    Then Sayfayi kapatir
 
 

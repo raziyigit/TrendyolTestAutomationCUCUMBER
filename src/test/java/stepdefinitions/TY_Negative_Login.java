@@ -17,8 +17,8 @@ public class TY_Negative_Login {
 
     @And("Sifre {string} yazilir")
     public void sifreYazilir(String password) {
-        org.junit.Assert.assertTrue("Öğe görünür değil",trendyol.SifreTextBox.isDisplayed());
-        trendyol.SifreTextBox.sendKeys(password);
+        org.junit.Assert.assertTrue("Öğe görünür değil",trendyol.PasswordTextBox.isDisplayed());
+        trendyol.PasswordTextBox.sendKeys(password);
 
     }
 
@@ -26,8 +26,8 @@ public class TY_Negative_Login {
     @Then("Hata mesajı aldığı kontrol edilir {string}")
     public void hataMesajıAldıgıKontrolEdilir(String errorMessage) {
 
-            Assert.isTrue(trendyol.HataMesajiKontrol.isDisplayed(), "Hata mesajı görüntülendi!");
-            String actualErrorMessage = trendyol.HataMesajiKontrol.getText();
+            Assert.isTrue(trendyol.ErrorMessageControl.isDisplayed(), "Hata mesajı görüntülendi!");
+            String actualErrorMessage = trendyol.ErrorMessageControl.getText();
             Assert.isTrue(actualErrorMessage.equals(errorMessage), "Hata mesajı beklendiği gibi değil!");
             System.out.println("Fail Login Test başarılı: Beklenen hata mesajı alındı.");
 
@@ -36,7 +36,7 @@ public class TY_Negative_Login {
     @And("Login asamasinda cikan kategoriler pop-up kapat")
     public void loginAsamasindaCikanKategorilerPopUpKapat() {
         try {
-            trendyol.NegativeLoginPagePopUpKapat.click();
+            trendyol.NegativeLoginPagePopUpClose.click();
         } catch (Exception e) {
             System.out.println("Popup kapatma sırasında hata oluştu: " + e.getMessage());
         }

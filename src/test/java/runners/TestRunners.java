@@ -9,11 +9,13 @@ import org.junit.runner.RunWith;
         features = "src/test/resources",
         glue = "stepdefinitions",
         plugin = {"pretty", "html:target/cucumber-reports.html"},
-        monochrome = true
+        monochrome = true,
+        tags = "@HomePageLoading or @ProductSearch or @NegativeProductSearch or @ProductDetails or @ShoppingCartActions  or @PositiveLogin or @NegativeLogin"
 
 )
 
 public class TestRunners {
 
-
 }
+
+

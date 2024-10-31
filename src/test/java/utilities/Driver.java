@@ -52,10 +52,22 @@ public class Driver {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
 
+
         return driver;
+
+    }
+    public static void closeDriver() {
+        if (driver != null) {
+            driver.close();
+            driver = null;
+        }
     }
 
-
-
+    public static void quitDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
 
 }

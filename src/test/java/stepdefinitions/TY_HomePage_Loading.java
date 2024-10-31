@@ -18,7 +18,8 @@ public class TY_HomePage_Loading {
     }
 
 
-
-
-
+    @Then("Sayfayi kapatir")
+    public void sayfayiKapatir() {
+        Driver.quitDriver();
+    }
 }
