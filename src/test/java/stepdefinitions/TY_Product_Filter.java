@@ -3,43 +3,44 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import org.junit.Assert;
 import pages.Trendyol;
+import utilities.ConfigReader;
 
-public class TY_Product_Filter {
-    Trendyol trendyol =new Trendyol();
+import java.util.NoSuchElementException;
+
+public class TY_Product_Filter extends BaseSteps {
+
+    Trendyol trendyol = new Trendyol();
 
     @And("Urun siralamasi tiklanir")
     public void urunSiralamasiTiklanir() {
-        Assert.assertTrue("Buton mevcut degil",trendyol.ProductSortingButton.isDisplayed());
-        trendyol.ProductSortingButton.click();
+        checkElementDisplayed(trendyol.ProductSortingButton, " Urunleri sirala butonu mevcut degil");
+        clickElement(trendyol.ProductSortingButton, "tiklama basarisiz...");
     }
 
     @And("Siralama fiyat dusukten yuksege secilir")
     public void siralamaFiyatDusuktenYuksegeSecilir() {
 
-            if (trendyol.ProductLowestPriceButton.isDisplayed()) {
-                trendyol.ProductLowestPriceButton.click();
-            } else if (trendyol.ProductLowestPriceButton2.isDisplayed()) {
-                trendyol.ProductLowestPriceButton2.click();
-            }
-
-
+        checkElementDisplayed(trendyol.ProductLowestPriceButton,"En dusuk fiyat butonu mevcut degil");
+        clickElement(trendyol.ProductLowestPriceButton, "tiklama basarisiz...");
 
     }
 
 
     @And("Filtrelerden marka secilir")
     public void filtrelerdenMarkaSecilir() {
-        Assert.assertTrue("Buton mevcut degil",trendyol.ProductBrandChooseCheckBox.isDisplayed());
-        trendyol.ProductBrandChooseCheckBox.click();
+        checkElementDisplayed(trendyol.ProductBrandChooseCheckBox, "Urun marka sec check box mevcut degil");
+        clickElement(trendyol.ProductBrandChooseCheckBox, "tiklama basarisiz...");
     }
 
 
 
-    @And("Kategori ara textbox'a aranan ürün kategorisi yazdirilir")
-    public void kategoriAraTextboxAArananUrunKategorisiYazdirilir() {
-        trendyol.ProductCategorySearchTextBox.sendKeys("Telefon Kılıfı");
-        trendyol.TelefonKilifiCheckBox.click();
+    @And("Kategori ara textbox'a aranan ürün kategorisi {string} yazdirilir")
+    public void kategoriAraTextboxAArananUrunKategorisiYazdirilir(String telefon) {
+        String Kilif = ConfigReader.getProperty(telefon);
+        sendKeysToElement(trendyol.ProductCategorySearchTextBox, Kilif,"Aranan urun kategorisi yazma basarisiz");
+        clickElement(trendyol.TelefonKilifiCheckBox, "tiklama basarisiz...");
     }
+
 
 
 }

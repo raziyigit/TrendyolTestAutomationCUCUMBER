@@ -4,50 +4,50 @@ import io.cucumber.java.en.And;
 import org.junit.Assert;
 import pages.Trendyol;
 
-public class TY_Shopping_Cart_Actions {
-    Trendyol trendyol =new Trendyol();
+public class TY_Shopping_Cart_Actions extends BaseSteps {
+
+    Trendyol trendyol = new Trendyol();
 
 
     @And("Sepete ekle butonu tiklanir")
     public void sepeteEkleButonuTiklanir() {
-        trendyol.ProductPageAddBasketButton.click();
+        clickElement(trendyol.ProductPageAddBasketButton, "tiklama basarisiz...");
     }
 
     @And("Sepetim butonuna tiklanir, sepete gidilir")
     public void sepetimButonunaTiklanirSepeteGidilir() {
-        trendyol.MyBasketButton.click();
+        clickElement(trendyol.MyBasketButton, "tiklama basarisiz...");
     }
 
     @And("Ekranda çikan anladım pop-up kapatilir")
     public void ekrandaCikanAnladımPopUpKapatilir() {
-        trendyol.BasketPageUnderstandButton.click();
+        clickElement(trendyol.BasketPageUnderstandButton, "tiklama basarisiz...");
     }
 
 
     @And("Sepetim sayfasinda oldugu kontrol edilir")
     public void sepetimSayfasindaOlduguKontrolEdilir() {
-        Assert.assertTrue("Text mevcut degil",trendyol.BasketText.isDisplayed());
-        Assert.assertTrue("Button mevcut degil",trendyol.BasketAcceptButton.isDisplayed());
+        checkElementDisplayed(trendyol.BasketText, "Text mevcut degil");
+        checkElementDisplayed(trendyol.BasketAcceptButton, "Sepeti onayla butonu mevcut degil");
     }
 
     @And("Urunun sepete eklendigi kontrol edilir")
     public void urununSepeteEklendigiKontrolEdilir() {
-        Assert.assertTrue("Button mevcut degil",trendyol.BasketPageSellerControl.isDisplayed());
-        Assert.assertTrue("Urun  mevcut degil",trendyol.ProductInBasketControl.isDisplayed());
-        Assert.assertTrue("Button  mevcut degil",trendyol.DeleteProductInBasketButton.isDisplayed());
+        checkElementDisplayed(trendyol.BasketPageSellerControl, "Satici mevcut degil");
+        checkElementDisplayed(trendyol.ProductInBasketControl, "Sepette urun mevcut degil");
+        checkElementDisplayed(trendyol.DeleteProductInBasketButton, "Sepetten urun sil butonu mevcut degil");
     }
 
     @And("Urun sepetten kaldirilir")
     public void urunSepettenKaldirilir() {
-        trendyol.DeleteProductInBasketButton.click();
+        clickElement(trendyol.DeleteProductInBasketButton, "tiklama basarisiz...");
     }
 
     @And("Sepette urun olmadigi kontrol edilir")
     public void sepetteUrunOlmadigiKontrolEdilir() {
-        Assert.assertTrue("Sepette urun mevcut",trendyol.RemoveProductInBasketControl.isDisplayed());
-        Assert.assertTrue("Sepette urun mevcut",trendyol.BasketAmountControl.isDisplayed());
+        checkElementDisplayed(trendyol.RemoveProductInBasketControl, "Sepette kaldirilmis urun mevcut degil");
+        checkElementDisplayed(trendyol.BasketAmountControl, "Sepet tutari ogesi mevcut degil");
     }
-
 
 
 }

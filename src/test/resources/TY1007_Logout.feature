@@ -1,7 +1,9 @@
 Feature: Trendyol Logout
 
+
   Background: Trendyol Login
     Given Trendyol login olunur
+  @Logout
   Scenario: Trendyol cikis yapma islemleri
     And Trendyol ana sayfasında giris yaptigi kontrol edilir
     And Hesabim butonunun uzerine gelinir

@@ -6,21 +6,21 @@ import org.junit.Assert;
 import utilities.ConfigReader;
 
 
-public class TY_Product_Search {
+public class TY_Product_Search extends BaseSteps {
 
     Trendyol trendyol = new Trendyol();
 
     @And("Urun arama combobox tiklanir, ürün adı yazılır")
     public void urunAramaComboboxTiklanirUrunAdıYazılır() {
-        org.junit.Assert.assertTrue("Öğe görünür değil", trendyol.SearchTextBox.isDisplayed());
-        trendyol.SearchTextBox.sendKeys("Iphone 14");
+        checkElementDisplayed(trendyol.SearchTextBox, "Urun arama text box mevcut degil");
+        sendKeysToElement(trendyol.SearchTextBox, "Iphone 14", "Urun adi yazma işlemi başarısız");
     }
 
 
     @And("Urun arama butonuna tiklanir")
     public void urunAramaButonunaTiklanir() {
-        org.junit.Assert.assertTrue("Öğe görünür değil", trendyol.SearchButton.isDisplayed());
-        trendyol.SearchButton.click();
+        checkElementDisplayed(trendyol.SearchButton, "Urun arama butonu mevcut degil");
+        clickElement(trendyol.SearchButton, "tiklama basarisiz...");
 
     }
 
@@ -28,27 +28,25 @@ public class TY_Product_Search {
     @And("Urun arama combobox tiklanir, {string} adı yazılır")
     public void urunAramaComboboxTiklanirAdıYazılır(String fail) {
         String failProduct = ConfigReader.getProperty(fail);
-        trendyol.SearchTextBox.sendKeys(failProduct);
+        sendKeysToElement(trendyol.SearchTextBox, failProduct, "Hatali urun adi yazma işlemi başarısız");
     }
 
     @And("Urun bulunmadigi kontrol edilir")
     public void urunBulunmadigiKontrolEdilir() {
-        Assert.assertTrue("Ürün bulunmadı mesajı görünmüyor!", trendyol.NegativeProductSearchResult.isDisplayed());
+        checkElementDisplayed(trendyol.NegativeProductSearchResult, "Urun bulunamadi mesaji mevcut degil");
     }
 
     @And("Urun mevcut oldugu gorulur")
     public void urunMevcutOlduguGorulur() {
-        Assert.assertTrue("Ürün bulundu mesajı görünmüyor!", trendyol.IphoneSearchResult.isDisplayed());
+        checkElementDisplayed(trendyol.IphoneSearchResult, "Urun bulundu mesaji mevcut degil");
     }
 
 
     @And("Urun arama combobox tiklanir, {string} yazilir")
     public void urunAramaComboboxTiklanirYazilir(String key) {
         String urunAdi = ConfigReader.getProperty(key);
-        trendyol.SearchTextBox.sendKeys(urunAdi);
-
+        sendKeysToElement(trendyol.SearchTextBox, urunAdi, "Urun adi yazma işlemi başarısız");
     }
-
 
 
 }

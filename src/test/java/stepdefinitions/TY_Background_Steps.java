@@ -9,20 +9,19 @@ import utilities.Driver;
 
 import static utilities.Driver.driver;
 
-public class TY_Background_Steps {
-    Trendyol trendyol =new Trendyol();
+public class TY_Background_Steps extends BaseSteps {
+
+    Trendyol trendyol = new Trendyol();
 
     @Given("Trendyol ana sayfasi acilir")
     public void trendyolAnaSayfasiAcilir() {
         Driver.getDriver().get("https://trendyol.com");
 
         try {
-            trendyol.PopUpAcceptButton.click();
+            clickElement(trendyol.PopUpAcceptButton, "tiklama basarisiz...");
         } catch (Exception e) {
             System.out.println("Popup kapatma sırasında hata oluştu: " + e.getMessage());
         }
-
-
 
 
     }
@@ -32,26 +31,26 @@ public class TY_Background_Steps {
         Driver.getDriver().get("https://trendyol.com");
 
         try {
-            trendyol.PopUpAcceptButton.click();
+            clickElement(trendyol.PopUpAcceptButton, "tiklama basarisiz...");
         } catch (Exception e) {
             System.out.println("Popup kapatma sırasında hata oluştu: " + e.getMessage());
         }
 
 
-        trendyol.HomePageLoginButton.click();
+        clickElement(trendyol.HomePageLoginButton, "tiklama basarisiz...");
 
-        trendyol.EpostaTextBox.sendKeys("selenium_test00@outlook.com");
+        sendKeysToElement(trendyol.EpostaTextBox, "selenium_test00@outlook.com", "Mail yazma işlemi başarısız");
 
-        trendyol.PasswordTextBox.sendKeys("Aa123456..");
+        sendKeysToElement(trendyol.PasswordTextBox, "Aa123456..", "Şifre yazma işlemi başarısız");
 
         try {
-            trendyol.NegativeLoginPagePopUpClose.click();
+            clickElement(trendyol.InformationPopUpClose, "tiklama basarisiz...");
         } catch (Exception e) {
             System.out.println("Popup kapatma sırasında hata oluştu: " + e.getMessage());
         }
 
 
-        trendyol.LoginButton.click();
+        clickElement(trendyol.LoginButton, "tiklama basarisiz...");
 
 
     }
