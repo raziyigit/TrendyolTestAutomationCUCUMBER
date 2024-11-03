@@ -139,3 +139,158 @@ Feature Dosyası (src/test/java/resources/TY1010_Product_Collection_Actions.feat
 
 ## **Yazarlar**
 **Razi Mert YİĞİT©**
+
+
+
+
+
+
+
+
+# Trendyol Automation Project                 ----Razi Mert YİĞİT©----
+
+This project is a test automation framework created for the Trendyol website, using Java, Selenium, Cucumber, and JUnit. The Page Object Model (POM) design pattern is implemented to enhance code reusability and maintainability.
+
+## Table of Contents
+
+1. [Project Structure](#project-structure)
+2. [Installation and Setup](#installation-and-setup)
+3. [Configuration](#configuration)
+4. [Usage](#usage)
+5. [Running Tests](#running-tests)
+6. [Error Management and Logging](#error-management-and-logging)
+
+## Requirements:
+
+- Selenium: 4.16.1
+- Cucumber Java: 7.14.1
+- Cucumber JUnit: 7.14.0
+- Code Style: The project follows Java naming conventions and applies the POM design pattern, ensuring modular and reusable code.
+
+
+## Project Structure
+
+Description of the project structure:
+
+- **`pom.xml`**: Manages project dependencies (Selenium, Cucumber, JUnit) and configurations for Maven.
+- **`src/test/java`**:
+  - **`stepdefinitions`**: Contains Cucumber step definitions where test steps are implemented.
+  - **`utilities`**: Contains helper classes like `Driver`, `ConfigReader` for configuration and WebDriver management.
+  - **`hooks`**: The `Hooks` class manages setup and teardown operations for scenarios; captures screenshots upon test failure.
+  - **`pages`**: Contains Page Object Model (POM) classes for Trendyol pages.
+- **`src/test/resources`**:
+  - **`features`**: Contains Cucumber feature files defining test scenarios.
+  - **`configuration.properties`**: Manages configuration settings such as browser type and user information in key-value pairs.
+
+## Installation and Setup
+
+1. **Clone the Project:**:
+   ```bash
+   git clone https://github.com/raziyigit/TrendyolTestAutomationCUCUMBER.git
+**Open the Project in IntelliJ IDEA:** Ensure IntelliJ IDEA and JDK 17 are installed.
+
+**Install Dependencies:** Maven will automatically download the dependencies listed in pom.xml:
+
+- Selenium WebDriver for browser interactions.
+- Cucumber for BDD-style testing.
+- JUnit as the test runner framework.
+- Set up Browser Driver:
+- Ensure the appropriate WebDriver (Chrome, Firefox, Edge, etc.) is in the system PATH.
+- Alternatively, specify the paths to the driver files in the configuration.properties file if needed.
+
+
+## Configuration
+The configuration.properties file stores configurable parameters for the project.
+
+
+## Usage
+Helper Classes
+
+ConfigReader: Reads configuration values from the configuration.properties file.
+
+* Method: getProperty(String key): Returns a configuration value for the specified key.
+* Driver: Manages the WebDriver instance and handles termination.
+
+* Method: getDriver(): Initializes WebDriver based on the browser property.
+* Method: closeDriver(): Closes the current browser window.
+* Method: quitDriver(): Closes all browser windows and ends the WebDriver session.
+* Hooks: Includes setup and teardown operations for scenarios.
+
+* After: Captures a screenshot upon test failure and attaches it to the scenario report.
+BaseSteps: A base class containing common actions for WebElement operations (e.g., clickElement, sendKeysToElement, checkElementDisplayed).
+
+* Page Object Model (POM)
+ Each page on the Trendyol website corresponds to a class in the pages package, which contains WebElements and related actions.
+
+
+## Running Tests
+**Running Tests with Maven**
+1. **To run all tests**:
+   ```bash
+   mvn test
+
+
+2. **To run tests tagged with a specific label:**:
+   ```bash
+   mvn test -Dcucumber.options="--tags @etiket"
+
+
+Running from IntelliJ IDEA
+Right-click on the feature file or the Runner class and select Run.
+
+
+Sample Scenario:
+Feature File (src/test/java/resources/TY1010_Product_Collection_Actions.feature):
+
+
+## Sample Scenario: Feature File (src/test/java/resources/TY1010_Product_Collection_Actions.feature)
+```bash
+**Feature**: Product Favorite Actions
+
+**Background**: 
+- Open Trendyol website
+- Log into Trendyol
+
+**Scenario**: Testing adding and removing products from favorites
+- And Wait for 5 seconds
+- And Click on the product search combobox and enter "productName"
+- And Click on the product search button
+- And Select the first searched product
+- And Close the pop-up on the opened page
+- And Add the product to favorites
+- And Open the Favorites page
+- And Close the information pop-up
+- And Click on the Collections button
+- And Scroll down the page
+- And Verify that the collection is empty
+- And Click on the Add new collection button
+- And Enter a collection name
+- And Click Create Collection
+- And Add the product to the collection
+- And Click on the Add to collection button in the popup
+- And Click on the Go to collection button
+- And Verify that the collection contains the product
+- And Remove the product from favorites in the collection
+- And Go back to My Collections page
+- And Delete the collection
+- And Verify that the collection is empty
+- And Return to the Trendyol homepage
+- And Close the page
+
+```
+
+
+## Error Management and Logging
+* **Screenshots:** Captured by the Hooks class when a test fails.
+* **Assert:** Every method in the BaseSteps class uses assertions to verify conditions. Custom error messages are added to simplify debugging.
+* **Wait Times:** WebDriver waits (implicit and explicit) are used to handle dynamic content and prevent NoSuchElementException errors.
+
+
+## **Authors**
+**Razi Mert YİĞİT©**
+
+
+
+
+
+
