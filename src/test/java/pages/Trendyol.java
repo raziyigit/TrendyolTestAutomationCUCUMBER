@@ -11,7 +11,6 @@ public class Trendyol {
     public Trendyol(){
         PageFactory.initElements(Driver.getDriver(),this);}
 
-    //XPATH
 
     @FindBy(xpath = "//button[@id='onetrust-accept-btn-handler']")
     public WebElement PopUpAcceptButton;
@@ -29,7 +28,7 @@ public class Trendyol {
     @FindBy(xpath = "//button[@class='q-primary q-fluid q-button-medium q-button submit']")
     public WebElement LoginButton;
 
-    @FindBy(xpath = "//span[text()='E-posta adresiniz ve/veya şifreniz hatalı.']")
+    @FindBy(xpath = "//span[@class='message']")
     public WebElement ErrorMessageControl;
 
     @FindBy(xpath = "//input[@data-testid='suggestion']")

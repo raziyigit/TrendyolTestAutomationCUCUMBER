@@ -11,12 +11,11 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/cucumber-reports.html",
                 "json:target/json-reports/cucumber-smoke.json",
                 "junit:target/xml-report/cucumber-smoke.xml"},
-        monochrome = true
-
+        monochrome = true,
+        tags = "@PositiveLogin"
 )
 
-public class TestRunners {
-
+public class TY1005_TestRunner {
 }
 
 

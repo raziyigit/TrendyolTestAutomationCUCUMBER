@@ -15,7 +15,6 @@ public class ConfigReader {
         try {
             FileInputStream fis = new FileInputStream(dosyaYolu);
             properties = new Properties();
-            // UTF-8 karakter kodlamasını kullanarak dosyayı oku
             InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
             properties.load(isr);
         } catch (IOException e) {

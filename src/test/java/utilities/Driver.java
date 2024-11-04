@@ -20,7 +20,7 @@ public class Driver {
     public static WebDriver getDriver() {
 
         String browser = ConfigReader.getProperty("browser");
-        // configuration.properties dosyasindaki tercih edilen browser'i kaydettik
+
 
         if (driver == null) {
 
@@ -56,6 +56,7 @@ public class Driver {
         return driver;
 
     }
+
     public static void closeDriver() {
         if (driver != null) {
             driver.close();

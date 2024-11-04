@@ -15,5 +15,8 @@ Scenario Outline: Trendyol Negatif login islemleri
   Then Sayfayi kapatir
 
   Examples:
-    | eposta                      | password  | errorMessage                               |
-    | selenium_test00@outlook.com | Aa123456. | E-posta adresiniz ve/veya şifreniz hatalı. |
+    | eposta               | password | errorMessage                               |
+    | selenium@outlook.com | selenium | E-posta adresiniz ve/veya şifreniz hatalı. |
+    | selenium@outlook.com |          | Lütfen şifrenizi giriniz.                  |
+    |                      | selenium | Lütfen geçerli bir e-posta adresi giriniz. |
+    |                      |          | Lütfen geçerli bir e-posta adresi giriniz. |

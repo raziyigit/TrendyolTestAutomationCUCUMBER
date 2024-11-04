@@ -24,7 +24,12 @@ Feature: Product Favorite Actions
     And Koleksiyonda urun oldugu kontrol edilir
     And Koleksiyondaki urun favorilerden cikarilir
     And Koleksiyonlarim sayfasina geri donulur
+    And Sayfa asagiya kaydirilir
     And Koleksiyon silinir
     And Koleksiyonun bos oldugu kontrol edilir
     And Trendyol ana sayfasına geri dönülür
+    And Hesabim butonunun uzerine gelinir
+    And 3 saniye beklenir
+    And Cikis yap butonuna tiklanir
+    And Cikis yaptigi kontrol edilir
     And Sayfayi kapatir

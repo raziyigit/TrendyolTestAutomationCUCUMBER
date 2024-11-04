@@ -18,4 +18,9 @@ Feature: Product Favorite Actions
     And Favorilerimden urun cikarilir
     And Urunun favorilerden cikarildigi, favori listesinin bos oldugu kontrol edilir
     And 3 saniye beklenir
+    And Trendyol ana sayfasına geri dönülür
+    And Hesabim butonunun uzerine gelinir
+    And 3 saniye beklenir
+    And Cikis yap butonuna tiklanir
+    And Cikis yaptigi kontrol edilir
     And Sayfayi kapatir
