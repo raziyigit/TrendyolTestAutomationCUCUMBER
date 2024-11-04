@@ -176,6 +176,8 @@ This project is a test automation framework created for the Trendyol website, us
 ## Important
 Before running the project, you need to fill in the **mail** and **password** variables in the configuration.properties file with values appropriate for your own account.
 
+![image](https://github.com/user-attachments/assets/b02855ec-5561-49ce-b2d0-781417f75ce6)
+
 ## Table of Contents
 
 1. [Project Structure](#project-structure)
