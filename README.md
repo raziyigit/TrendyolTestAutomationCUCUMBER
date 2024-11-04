@@ -122,7 +122,7 @@ Feature Dosyası (src/test/java/resources/TY1010_Product_Collection_Actions.feat
 - And Sayfa aşağıya kaydırılır
 - And Koleksiyonun boş olduğu kontrol edilir
 - And Yeni koleksiyon ekle butonuna tıklanır
-- And Koleksiyon adı yazılır
+- And Koleksiyon adi "TrendyolTestKoleksiyon" yazilir
 - And Koleksiyon oluştur tıklanır
 - And Ürün koleksiyona eklenir
 - And Popup üzerinde koleksiyona ekle butonuna tıklanır
@@ -130,11 +130,23 @@ Feature Dosyası (src/test/java/resources/TY1010_Product_Collection_Actions.feat
 - And Koleksiyonda ürün olduğu kontrol edilir
 - And Koleksiyondaki ürün favorilerden çıkarılır
 - And Koleksiyonlarım sayfasına geri dönülür
+- And Sayfa asagiya kaydirilir
 - And Koleksiyon silinir
 - And Koleksiyonun boş olduğu kontrol edilir
 - And Trendyol ana sayfasına geri dönülür
+- And Hesabim butonunun uzerine gelinir
+- And 3 saniye beklenir
+- And Cikis yap butonuna tiklanir
+- And Cikis yaptigi kontrol edilir
 - And Sayfayı kapatır
 ```
+
+![image](https://github.com/user-attachments/assets/b9f3d747-c580-4df4-90c5-8afe02765410)
+
+![image](https://github.com/user-attachments/assets/510b3c5d-4e41-437d-8f8b-c6f52d7235cf)
+
+![image](https://github.com/user-attachments/assets/0ec3d2fe-6f0c-401d-acca-e5c77cf0db2c)
+
 
 
 ## Hata Yönetimi ve Kayıt
@@ -265,31 +277,35 @@ Feature File (src/test/java/resources/TY1010_Product_Collection_Actions.feature)
 - Log into Trendyol
 
 **Scenario**: Testing adding and removing products from favorites
-- And Wait for 5 seconds
-- And Click on the product search combobox and enter "productName"
-- And Click on the product search button
-- And Select the first searched product
-- And Close the pop-up on the opened page
-- And Add the product to favorites
-- And Open the Favorites page
-- And Close the information pop-up
-- And Click on the Collections button
-- And Scroll down the page
-- And Verify that the collection is empty
-- And Click on the Add new collection button
-- And Enter a collection name
-- And Click Create Collection
-- And Add the product to the collection
-- And Click on the Add to collection button in the popup
-- And Click on the Go to collection button
-- And Verify that the collection contains the product
-- And Remove the product from favorites in the collection
-- And Go back to My Collections page
-- And Delete the collection
-- And Verify that the collection is empty
-- And Return to the Trendyol homepage
-- And Close the page
-
+- And wait for 5 seconds
+- And click on the product search combobox and type "productName"
+- And click on the product search button
+- And select the first searched product
+- And close the pop-up on the opened page
+- And add the product to favorites
+- And open the Favorites page
+- And close the notification pop-up
+- And click on the My Collections button
+- And scroll down the page
+- And check if the collection is empty
+- And click on the Add New Collection button
+- And enter "TrendyolTestCollection" as the collection name
+- And click on Create Collection
+- And add the product to the collection
+- And click on the Add to Collection button on the popup
+- And click on the Go to Collection button
+- And verify that the product is in the collection
+- And remove the product from favorites within the collection
+- And go back to the My Collections page
+- And scroll down the page
+- And delete the collection
+- And verify that the collection is empty
+- And return to the Trendyol homepage
+- And hover over the My Account button
+- And wait for 3 seconds
+- And click on the Log Out button
+- And verify that the user has logged out
+- And close the page
 ```
 
 
