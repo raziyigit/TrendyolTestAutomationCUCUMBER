@@ -1,6 +1,9 @@
 # Trendyol Otomasyon Projesi                 ----Razi Mert YİĞİT©----
 
-Bu proje, Trendyol web sitesi için Java, Selenium, Cucumber ve JUnit kullanılarak oluşturulmuş bir test otomasyon framework'üdür. Test kodlarının yeniden kullanılabilirliğini ve bakımını artırmak için Sayfa Nesne Modeli (POM) tasarım deseni uygulanmıştır.
+Bu proje, Trendyol web sitesi için Java, Selenium, Cucumber ve JUnit kullanılarak oluşturulmuş bir test otomasyon framework'üdür. Test kodlarının yeniden kullanılabilirliğini ve bakımını artırmak için Sayfa Nesne Modeli (POM) tasarım deseni uygulanmıştır. 
+
+## Önemli
+* Projeyi çalıştırmadan önce configuration.properties içerisinde **"mail"** ve **"şifre"** değişkenlerini kendi hesabınıza uygun olarak doldurmanız gerekmektedir.
 
 ## İçindekiler
 
@@ -33,6 +36,8 @@ Proje yapısının açıklaması:
   - **`features`**: Test senaryolarının tanımlandığı Cucumber feature dosyalarını içerir.
   - **`configuration.properties`**: Tarayıcı türü, kullanıcı bilgileri gibi yapılandırma ayarlarını anahtar-değer çiftleri halinde yönetir.
 
+- **src/test/resources/TY1006_Negative_Login.feature adımında Scenario Outline yapısı kullanılmıştır.Mail boş şifre dolu, mail dolu şifre boş , her ikisi de boş vb test caselerinin hepsi kullanılmıştır.**
+- **Assert yapısı Element kontrol adımları haricinde de her bir xpath için proje içerisinde BaseSteps'te tanımlı olan methodlar ile kontrol ettirilmiştir.**
 
 ## Kurulum ve Yapılandırma
 
@@ -151,6 +156,9 @@ Feature Dosyası (src/test/java/resources/TY1010_Product_Collection_Actions.feat
 
 This project is a test automation framework created for the Trendyol website, using Java, Selenium, Cucumber, and JUnit. The Page Object Model (POM) design pattern is implemented to enhance code reusability and maintainability.
 
+## Important
+Before running the project, you need to fill in the **mail** and **password** variables in the configuration.properties file with values appropriate for your own account.
+
 ## Table of Contents
 
 1. [Project Structure](#project-structure)
@@ -181,6 +189,9 @@ Description of the project structure:
 - **`src/test/resources`**:
   - **`features`**: Contains Cucumber feature files defining test scenarios.
   - **`configuration.properties`**: Manages configuration settings such as browser type and user information in key-value pairs.
+ 
+- **src/test/resources/TY1006_Negative_Login.feature adımında Scenario Outline yapısı kullanılmıştır.Mail boş şifre dolu, mail dolu şifre boş , her ikisi de boş vb test caselerinin hepsi kullanılmıştır.**
+- **Scenario Outline structure was used in the src/test/resources/TY1006_Negative_Login.feature step. All test cases such as mail is empty, password is full, mail is full, password is empty, both are empty, etc. were used.**
 
 ## Installation and Setup
 
