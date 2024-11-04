@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/2564d8e8-2621-40d2-8780-f01f29b4bf20)![image](https://github.com/user-attachments/assets/6594e939-d9ed-402f-9753-2cf5be82c551)**Turkish**
+**Turkish**
 # Trendyol Otomasyon Projesi                 ----Razi Mert YİĞİT©----
 
 Bu proje, Trendyol web sitesi için Java, Selenium, Cucumber ve JUnit kullanılarak oluşturulmuş bir test otomasyon framework'üdür. Test kodlarının yeniden kullanılabilirliğini ve bakımını artırmak için Sayfa Nesne Modeli (POM) tasarım deseni uygulanmıştır. 
