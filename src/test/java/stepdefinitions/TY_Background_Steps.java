@@ -39,9 +39,10 @@ public class TY_Background_Steps extends BaseSteps {
 
         clickElement(trendyol.HomePageLoginButton, "tiklama basarisiz...");
 
-        sendKeysToElement(trendyol.EpostaTextBox, "selenium_test00@outlook.com", "Mail yazma işlemi başarısız");
+        sendKeysToElement(trendyol.EpostaTextBox, ConfigReader.getProperty("mail"), "Mail yazma işlemi başarısız");
 
-        sendKeysToElement(trendyol.PasswordTextBox, "Aa123456..", "Şifre yazma işlemi başarısız");
+
+        sendKeysToElement(trendyol.PasswordTextBox, ConfigReader.getProperty("sifre"), "Şifre yazma işlemi başarısız");
 
         try {
             clickElement(trendyol.InformationPopUpClose, "tiklama basarisiz...");

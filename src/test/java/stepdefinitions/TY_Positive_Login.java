@@ -51,13 +51,13 @@ public class TY_Positive_Login extends BaseSteps {
     @And("Mail adresi yazilir")
     public void mailAdresiYazilir() {
         checkElementDisplayed(trendyol.EpostaTextBox, "Eposta text box mevcut degil");
-        sendKeysToElement(trendyol.EpostaTextBox, "selenium_test00@outlook.com", "Mail yazma işlemi başarısız");
+        sendKeysToElement(trendyol.EpostaTextBox, ConfigReader.getProperty("mail"), "Mail yazma işlemi başarısız");
     }
 
     @And("Sifre yazilir")
     public void sifreYazilir() {
         checkElementDisplayed(trendyol.PasswordTextBox, "Sifre text box mevcut degil");
-        sendKeysToElement(trendyol.PasswordTextBox, "Aa123456..", "Şifre yazma işlemi başarısız");
+        sendKeysToElement(trendyol.PasswordTextBox, ConfigReader.getProperty("sifre"), "Şifre yazma işlemi başarısız");
 
     }
 
